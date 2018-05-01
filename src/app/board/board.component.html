@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        {{status}}
+       
+    </div>
+    <button class="btn btn-danger" (click)="reset()">Reset Game</button>
+</div>
+
+<div class="anil">
+    <div *ngFor="let row of [0,1,2]">
+        <app-cell style="float: left;" *ngFor="let col of [0,1,2]" (click)="putValue(col+row*3)" [putMark]="getMarkFromService[col+row*3]"></app-cell>
+    </div>
+</div>
+
+
+
+<div style="width: 287px;height: 66px;margin:50px auto 0px auto;">
+    <button class="btn btn-outline-primary" *ngFor="let d of mv; let di = index" (click)="switchMoves(di)">Step No.{{di}}</button>
+</div>
